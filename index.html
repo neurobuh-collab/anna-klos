@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F4EDE1;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes wishIn{0%{opacity:0;transform:translateY(12px) scale(.97)}100%{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div data-root ref="{{ rootRef }}" style="--paper:#F4EDE1;--paper2:#EEE4D3;--card:#FCF9F2;--ink:#241C15;--ink2:#5C5044;--ink3:#978978;--line:#E7DBC8;--espresso:#231A13;--espresso2:#2F251C;--accent:#B4693B;--accent2:#6C7A57;--accent-soft:#EEDDCC;--serif:'Spectral',Georgia,serif;--sans:'Golos Text',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--pad:clamp(64px,9vw,128px);background:var(--paper);color:var(--ink);font-family:var(--sans);overflow-x:hidden;">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(244,237,225,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:13px 20px;">
+      <a href="#hero" style="text-decoration:none;display:flex;flex-direction:column;line-height:1;flex:0 0 auto;">
+        <span style="font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:-.01em;color:var(--ink);">Анна&nbsp;Клос</span>
+        <span style="font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-top:3px;">бухгалтер · малый бизнес</span>
+      </a>
+      <nav style="flex:1 1 auto;display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;white-space:nowrap;font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:2px 4px;justify-content:flex-end;">
+        <a href="#klientam" style="text-decoration:none;color:var(--ink2);" style-hover="color:var(--accent)">Кому помогаю</a>
+        <a href="#about" style="text-decoration:none;color:var(--ink2);" style-hover="color:var(--accent)">Обо мне</a>
+        <a href="#services" style="text-decoration:none;color:var(--ink2);" style-hover="color:var(--accent)">Услуги</a>
+        <a href="#cases" style="text-decoration:none;color:var(--ink2);" style-hover="color:var(--accent)">Кейсы</a>
+        <a href="#channel" style="text-decoration:none;color:var(--ink2);" style-hover="color:var(--accent)">Канал</a>
+      </nav>
+      <a href="https://t.me/anna_klos" target="_blank" rel="noopener" style="flex:0 0 auto;text-decoration:none;background:var(--accent);color:#FBF6EF;font-weight:600;font-size:14px;padding:11px 20px;border-radius:999px;" style-hover="filter:brightness(.93)">Записаться</a>
+    </div>
+  </header>
+
+  <section id="hero" data-screen-label="Hero" style="padding:clamp(48px,7vw,92px) 24px clamp(40px,6vw,72px);scroll-margin-top:76px;position:relative;">
+    <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:center;">
+      <div style="flex:1 1 440px;min-width:280px;animation:fadeUp .7s .02s both;">
+        <span style="display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--card);border:1px solid var(--line);padding:8px 15px;border-radius:999px;">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);"></span>Бухгалтер для малого бизнеса · 15 лет практики
+        </span>
+        <h1 style="font-family:var(--serif);font-weight:600;font-size:clamp(34px,5.6vw,62px);line-height:1.04;letter-spacing:-.02em;color:var(--ink);margin:24px 0 0;text-wrap:balance;">Помогаю предпринимателям чувствовать себя спокойно в мире налогов</h1>
+        <p style="font-family:var(--sans);font-size:clamp(16px,1.7vw,20px);line-height:1.6;color:var(--ink2);max-width:560px;margin:22px 0 0;">Веду ИП, ООО и самозанятых удалённо. Простыми словами объясняю, что происходит с вашими налогами, и показываю короткий путь к решению.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:13px;margin-top:30px;">
+          <a href="https://t.me/anna_klos" target="_blank" rel="noopener" style="text-decoration:none;background:var(--accent);color:#FBF6EF;font-weight:600;font-size:16px;padding:15px 27px;border-radius:999px;" style-hover="filter:brightness(.93)">Записаться на консультацию</a>
+          <a href="https://t.me/allobuhgalter" target="_blank" rel="noopener" style="text-decoration:none;background:transparent;color:var(--ink);font-weight:600;font-size:16px;padding:14px 26px;border-radius:999px;border:1.5px solid var(--ink);" style-hover="background:var(--ink);color:var(--paper)">Читать мой канал</a>
+          <button onClick="{{ goToWish }}" style="cursor:pointer;text-decoration:none;background:var(--accent-soft);color:#6E4327;font-family:var(--sans);font-weight:600;font-size:16px;padding:14px 26px;border-radius:999px;border:1.5px solid transparent;" style-hover="border-color:var(--accent)">Получить пожелание на сегодня</button>
+        </div>
+        <p style="font-size:13.5px;line-height:1.5;color:var(--ink3);margin:16px 0 0;max-width:640px;">Отвечаю лично. В отчётный период — чуть дольше, но отвечаю всегда.</p>
+      </div>
+      <div style="flex:1 1 300px;min-width:250px;max-width:400px;animation:fadeUp .7s .12s both;">
+        <div style="position:relative;">
+          <div style="position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--line);border-radius:24px;"></div>
+          <div style="position:relative;width:100%;aspect-ratio:1/1;"><image-slot id="anna-hero" shape="rounded" radius="22" placeholder="Портрет Анны · квадрат 1:1" style="display:block;width:100%;height:100%;"></image-slot></div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:clamp(40px,6vw,72px) auto 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 0;padding-top:clamp(24px,3vw,36px);animation:fadeUp .7s .2s both;">
+      <div style="flex:1 1 200px;min-width:150px;padding:6px 24px 6px 0;">
+        <div style="font-family:var(--serif);font-size:clamp(26px,3.2vw,34px);font-weight:600;color:var(--ink);line-height:1;">15 лет</div>
+        <div style="font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-top:9px;">в бухгалтерии</div>
+      </div>
+      <div style="flex:1 1 200px;min-width:150px;padding:6px 24px;border-left:1px solid var(--line);">
+        <div style="font-family:var(--serif);font-size:clamp(19px,2.1vw,23px);font-weight:600;color:var(--ink);line-height:1.15;">ИП · ООО · самозанятые</div>
+        <div style="font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-top:9px;">с кем работаю</div>
+      </div>
+      <div style="flex:1 1 200px;min-width:150px;padding:6px 24px;border-left:1px solid var(--line);">
+        <div style="font-family:var(--serif);font-size:clamp(19px,2.1vw,23px);font-weight:600;color:var(--ink);line-height:1.15;">УСН · ОСНО · ПСН · АУСН</div>
+        <div style="font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-top:9px;">все режимы</div>
+      </div>
+      <div style="flex:1 1 200px;min-width:150px;padding:6px 0 6px 24px;border-left:1px solid var(--line);">
+        <div style="font-family:var(--serif);font-size:clamp(26px,3.2vw,34px);font-weight:600;color:var(--ink);line-height:1;">Удалённо</div>
+        <div style="font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-top:9px;">по всей России</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="klientam" data-screen-label="Кому помогаю" style="padding:var(--pad) 24px;scroll-margin-top:76px;background:var(--paper2);">
+    <div style="max-width:1120px;margin:0 auto;">
+      <div style="max-width:640px;">
+        <span style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);">01 — Кому я помогаю</span>
+        <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.4vw,50px);line-height:1.06;letter-spacing:-.01em;color:var(--ink);margin:16px 0 0;">Вам сюда, если вы…</h2>
+        <p style="font-size:clamp(15px,1.5vw,18px);line-height:1.6;color:var(--ink2);margin:18px 0 0;">Я работаю с малым бизнесом и понимаю его изнутри. Ниже — ситуации, с которыми ко мне приходят чаще всего.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:clamp(32px,4vw,52px);">
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:12px;color:var(--accent);">01</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);margin:12px 0 8px;">Начинаете бизнес</h3>
+          <p style="font-size:15px;line-height:1.6;color:var(--ink2);margin:0;">Открыть ИП или ООО, выбрать систему налогообложения, разобраться, нужна ли касса и как оформить сотрудников.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:12px;color:var(--accent);">02</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);margin:12px 0 8px;">ИП на УСН или патенте</h3>
+          <p style="font-size:15px;line-height:1.6;color:var(--ink2);margin:0;">Хотите платить ровно столько, сколько должны по закону, и ни рублём больше.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:12px;color:var(--accent);">03</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);margin:12px 0 8px;">Селлер на маркетплейсах</h3>
+          <p style="font-size:15px;line-height:1.6;color:var(--ink2);margin:0;">Wildberries, Ozon: учёт «по отчётам», выкупы, компенсации, УПД и НДС.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:12px;color:var(--accent);">04</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);margin:12px 0 8px;">Попали под НДС</h3>
+          <p style="font-size:15px;line-height:1.6;color:var(--ink2);margin:0;">Доход превысил 20 млн, впервые становитесь плательщиком НДС и не знаете, с чего начать.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:12px;color:var(--accent);">05</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);margin:12px 0 8px;">Хотите провести анализ налоговой нагрузки</h3>
+          <p style="font-size:15px;line-height:1.6;color:var(--ink2);margin:0;">Посмотрю оптимальные решения для вашего бизнеса, которые помогут сократить расходы.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:12px;color:var(--accent);">06</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);margin:12px 0 8px;">Бухгалтер-коллега</h3>
+          <p style="font-size:15px;line-height:1.6;color:var(--ink2);margin:0;">Пришли с задачей «впервые» — вместе спокойно разберём даже непростую ситуацию.</p>
+        </div>
+      </div>
+      <p style="font-size:15px;line-height:1.6;color:var(--ink3);margin:24px 0 0;max-width:760px;">Не нашли свою ситуацию? <a href="https://t.me/anna_klos" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft);">Напишите</a> — подскажу, смогу ли помочь я или порекомендую проверенного коллегу. В моём контакт-листе немало бухгалтеров-профессионалов.</p>
+    </div>
+  </section>
+
+  <section id="about" data-screen-label="Обо мне" style="padding:var(--pad) 24px;scroll-margin-top:76px;">
+    <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,64px);">
+      <div style="flex:1 1 280px;min-width:240px;max-width:380px;">
+        <div style="position:sticky;top:96px;">
+          <div style="position:relative;width:100%;aspect-ratio:1/1;"><image-slot id="anna-about" shape="rounded" radius="20" placeholder="Живое фото Анны · квадрат" style="display:block;width:100%;height:100%;"></image-slot></div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;">
+            <span style="font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--ink2);background:var(--card);border:1px solid var(--line);padding:7px 12px;border-radius:999px;">Наставник онлайн-школы по налогам</span>
+            <span style="font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--ink2);background:var(--card);border:1px solid var(--line);padding:7px 12px;border-radius:999px;">Спикер вебинаров и эфиров</span>
+            <span style="font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--ink2);background:var(--card);border:1px solid var(--line);padding:7px 12px;border-radius:999px;">Веду учёт в «Эльбе» и 1С</span>
+            <span style="font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--ink2);background:var(--card);border:1px solid var(--line);padding:7px 12px;border-radius:999px;">В бухгалтерском сообществе</span>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1 1 440px;min-width:280px;">
+        <span style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);">02 — Обо мне</span>
+        <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-.01em;color:var(--ink);margin:16px 0 0;">15 лет в бухгалтерии — и я всё ещё улыбаюсь</h2>
+        <p style="font-size:clamp(15px,1.5vw,18px);line-height:1.68;color:var(--ink2);margin:22px 0 0;">Меня зовут Анна Клос. Учёт, налоги, финансы, инвестиции, недвижимость, тендеры — чем я только не занималась. Дипломов немало, но я всегда училась не ради «галочки», а ради практики и пользы.</p>
+        <p style="font-size:clamp(15px,1.5vw,18px);line-height:1.68;color:var(--ink2);margin:16px 0 0;">Сначала помогала семье и друзьям, потом стали обращаться предприниматели и коллеги-бухгалтеры. Со временем обращений стало так много, что хобби стало любимым делом. Я всегда стараюсь объяснять максимально просто и показывать короткий путь к решению.</p>
+        <h3 style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin:36px 0 0;">Почему со мной спокойно</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px 32px;margin-top:18px;">
+          <div style="padding:18px 0;border-top:1px solid var(--line);">
+            <h4 style="font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);margin:0 0 6px;">Простыми словами</h4>
+            <p style="font-size:14.5px;line-height:1.58;color:var(--ink2);margin:0;">Сложное объясняю так, чтобы было понятно без бухгалтерского образования.</p>
+          </div>
+          <div style="padding:18px 0;border-top:1px solid var(--line);">
+            <h4 style="font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);margin:0 0 6px;">Короткий путь к решению</h4>
+            <p style="font-size:14.5px;line-height:1.58;color:var(--ink2);margin:0;">Не гружу теорией — показываю, что конкретно сделать.</p>
+          </div>
+          <div style="padding:18px 0;border-top:1px solid var(--line);">
+            <h4 style="font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);margin:0 0 6px;">Доверяй, но проверяй</h4>
+            <p style="font-size:14.5px;line-height:1.58;color:var(--ink2);margin:0;">Держу под контролем сроки, сверки и требования, чтобы вы не узнавали о проблеме постфактум.</p>
+          </div>
+          <div style="padding:18px 0;border-top:1px solid var(--line);">
+            <h4 style="font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);margin:0 0 6px;">Решение есть всегда</h4>
+            <p style="font-size:14.5px;line-height:1.58;color:var(--ink2);margin:0;">Даже блокировка счёта или требование от налоговой — это задача, а не катастрофа.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" data-screen-label="Услуги" style="padding:var(--pad) 24px;scroll-margin-top:76px;background:var(--paper2);">
+    <div style="max-width:1120px;margin:0 auto;">
+      <div style="max-width:640px;">
+        <span style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);">03 — Услуги</span>
+        <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.4vw,50px);line-height:1.06;letter-spacing:-.01em;color:var(--ink);margin:16px 0 0;">Чем могу быть полезна</h2>
+        <p style="font-size:clamp(15px,1.5vw,18px);line-height:1.6;color:var(--ink2);margin:18px 0 0;">Беру на себя рутину и сложные вопросы, чтобы вы занимались бизнесом, а не изучали Налоговый кодекс.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:clamp(32px,4vw,52px);align-items:start;">
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;">
+          <div style="display:flex;align-items:baseline;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line);">
+            <span style="font-family:var(--mono);font-size:13px;color:var(--accent);">01</span>
+            <h3 style="font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);margin:0;line-height:1.15;">Ведение и отчётность</h3>
+          </div>
+          <ul style="list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:12px;">
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Бухгалтерское сопровождение ИП и ООО «под ключ»</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Расчёт налогов и авансовых платежей, календарь отчётности</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Зарплата, кадры, страховые взносы, 6-НДФЛ, РСВ</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Учёт для маркетплейсов (по отчётам)</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Статистическая отчётность в Росстат, форма П-4</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Сверки по ЕНС (единый налоговый счёт), работа с требованиями ФНС</li>
+          </ul>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;">
+          <div style="display:flex;align-items:baseline;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line);">
+            <span style="font-family:var(--mono);font-size:13px;color:var(--accent);">02</span>
+            <h3 style="font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);margin:0;line-height:1.15;">Консультации и налоговое планирование</h3>
+          </div>
+          <ul style="list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:12px;">
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Открытие ИП / ООО, выбор системы налогообложения</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Подбор оптимального режима: УСН, ОСНО, ПСН, АУСН</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>НДС для упрощенцев: выбор ставки (5 / 7 / 20 / 22 %), учёт, счета-фактуры, УПД</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Смена налогового режима с расчётом выгоды</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>«Предварительный расчёт налога» — легально снизить базу до финального расчёта</li>
+          </ul>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;">
+          <div style="display:flex;align-items:baseline;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line);">
+            <span style="font-family:var(--mono);font-size:13px;color:var(--accent);">03</span>
+            <h3 style="font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ink);margin:0;line-height:1.15;">Решение проблемных ситуаций</h3>
+          </div>
+          <ul style="list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:12px;">
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Разблокировка расчётного счёта и карт (115-ФЗ, 161-ФЗ)</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Ответы на требования, пояснения, снятие рисков по ЕНС</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Уведомления в Роскомнадзор (152-ФЗ, оператор персональных данных)</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Валютный контроль и ВЭД</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Больничные и декретные для ИП: добровольное страхование в СФР</li>
+            <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:var(--ink2);"><span style="flex:0 0 auto;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent);"></span>Помощь с налоговой амнистией по дроблению бизнеса</li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:20px;background:var(--espresso);border-radius:18px;padding:22px 28px;">
+        <p style="font-size:16px;line-height:1.5;color:#EFE7DB;margin:0;max-width:640px;">Нужна разовая помощь или полное ведение — обсудим формат под вашу задачу.</p>
+        <a href="https://t.me/anna_klos" target="_blank" rel="noopener" style="flex:0 0 auto;text-decoration:none;background:var(--accent);color:#FBF6EF;font-weight:600;font-size:15px;padding:12px 22px;border-radius:999px;" style-hover="filter:brightness(.93)">Написать @anna_klos</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="formats" data-screen-label="Форматы" style="padding:var(--pad) 24px;scroll-margin-top:76px;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <div style="max-width:640px;">
+        <span style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);">04 — Форматы работы</span>
+        <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.4vw,50px);line-height:1.06;letter-spacing:-.01em;color:var(--ink);margin:16px 0 0;">Как мы можем работать</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:clamp(32px,4vw,48px);">
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;">
+          <span style="font-family:var(--mono);font-size:12px;color:var(--accent);">Формат 01</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:23px;color:var(--ink);margin:12px 0 10px;">Разовая консультация</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:var(--ink2);margin:0;">«Разговор по душам, где вместо сложностей появляется ясность». Открытие бизнеса, расчёт налогов, касса, сотрудники, выбор режима. Для предпринимателей и для коллег-бухгалтеров с задачей «впервые».</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;">
+          <span style="font-family:var(--mono);font-size:12px;color:var(--accent);">Формат 02</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:23px;color:var(--ink);margin:12px 0 10px;">Проект под задачу</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:var(--ink2);margin:0;">Смена режима с расчётом выгоды, переход на НДС, разблокировка счёта, уведомление в Роскомнадзор, постановка учёта маркетплейса.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;">
+          <span style="font-family:var(--mono);font-size:12px;color:var(--accent);">Формат 03</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:23px;color:var(--ink);margin:12px 0 10px;">Полное ведение</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:var(--ink2);margin:0;">Беру рутину на себя: отчётность в срок, сверки, требования, зарплата, налоги. Работа налажена и автоматизирована — вы просто получаете результат.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px);margin-top:clamp(40px,5vw,64px);align-items:flex-start;">
+        <div style="flex:1 1 420px;min-width:280px;">
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:clamp(22px,2.6vw,28px);color:var(--ink);margin:0 0 24px;">Как проходит консультация</h3>
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <div style="display:flex;gap:18px;padding:16px 0;border-top:1px solid var(--line);">
+              <span style="flex:0 0 auto;font-family:var(--mono);font-size:14px;color:var(--accent);width:24px;">01</span>
+              <p style="font-size:15.5px;line-height:1.55;color:var(--ink2);margin:0;">Пишете мне в Telegram <strong style="color:var(--ink);font-weight:600;">@anna_klos</strong> и коротко описываете ситуацию.</p>
+            </div>
+            <div style="display:flex;gap:18px;padding:16px 0;border-top:1px solid var(--line);">
+              <span style="flex:0 0 auto;font-family:var(--mono);font-size:14px;color:var(--accent);width:24px;">02</span>
+              <p style="font-size:15.5px;line-height:1.55;color:var(--ink2);margin:0;">Согласуем формат, время и стоимость.</p>
+            </div>
+            <div style="display:flex;gap:18px;padding:16px 0;border-top:1px solid var(--line);">
+              <span style="flex:0 0 auto;font-family:var(--mono);font-size:14px;color:var(--accent);width:24px;">03</span>
+              <p style="font-size:15.5px;line-height:1.55;color:var(--ink2);margin:0;">Разбираем ваш вопрос по цифрам — без общих фраз, с конкретными шагами.</p>
+            </div>
+            <div style="display:flex;gap:18px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+              <span style="flex:0 0 auto;font-family:var(--mono);font-size:14px;color:var(--accent);width:24px;">04</span>
+              <p style="font-size:15.5px;line-height:1.55;color:var(--ink2);margin:0;">Часть пояснений присылаю голосовыми — так понятнее и быстрее.</p>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1 1 300px;min-width:260px;background:var(--accent-soft);border-radius:20px;padding:28px;">
+          <h4 style="font-family:var(--serif);font-weight:600;font-size:19px;color:#6E4327;margin:0 0 12px;">Честно про загрузку</h4>
+          <p style="font-size:14.5px;line-height:1.62;color:#7A5236;margin:0;">В горячий отчётный период (до 25 числа) отвечаю дольше обычного — приоритет у действующих клиентов. Если места в графике нет, порекомендую проверенного коллегу.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" data-screen-label="Кейсы" style="padding:var(--pad) 24px;scroll-margin-top:76px;background:var(--paper2);">
+    <div style="max-width:1120px;margin:0 auto;">
+      <div style="max-width:640px;">
+        <span style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);">05 — Из практики</span>
+        <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.4vw,50px);line-height:1.06;letter-spacing:-.01em;color:var(--ink);margin:16px 0 0;">С чем приходят и что решаем</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:clamp(32px,4vw,52px);">
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);">Маркетплейсы</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ink);margin:11px 0 8px;">УСН + НДС для селлера</h3>
+          <p style="font-size:14px;line-height:1.58;color:var(--ink2);margin:0;">Клиент перешёл лимит на маркетплейсе. Собрали «пазл»: посчитали НДС с отчётов и выкупов, отделили компенсации, свели декларацию.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);">115-ФЗ</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ink);margin:11px 0 8px;">Блокировка счёта</h3>
+          <p style="font-size:14px;line-height:1.58;color:var(--ink2);margin:0;">Разобрались с основанием, собрали документы, вернули доступ к деньгам.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);">НДС</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ink);margin:11px 0 8px;">Ставка 5 % против 22 %</h3>
+          <p style="font-size:14px;line-height:1.58;color:var(--ink2);margin:0;">По доле входящего НДС подобрали выгодную ставку и закрепили её декларацией.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);">152-ФЗ</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ink);margin:11px 0 8px;">Уведомление в РКН</h3>
+          <p style="font-size:14px;line-height:1.58;color:var(--ink2);margin:0;">Подготовили уведомление оператора персональных данных до роста штрафов (со 100 000 ₽ для ИП и юрлиц).</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);">СФР</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ink);margin:11px 0 8px;">Декрет для ИП</h3>
+          <p style="font-size:14px;line-height:1.58;color:var(--ink2);margin:0;">Помогли встать на учёт в СФР и оформить выплаты: около 103 тыс. декретные, около 27 тыс. при рождении, ежемесячное пособие до 1,5 лет.</p>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;">
+          <span style="font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);">Росстат</span>
+          <h3 style="font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ink);margin:11px 0 8px;">Статистика Росстат</h3>
+          <p style="font-size:14px;line-height:1.58;color:var(--ink2);margin:0;">Нашли «спрятавшиеся» отчёты у клиентов до штрафов (10–20 тыс. ₽).</p>
+        </div>
+      </div>
+      <p style="font-size:15.5px;line-height:1.6;color:var(--ink3);margin:24px 0 0;max-width:640px;font-style:italic;font-family:var(--serif);">Каждая ситуация — это не про панику, а про понятный план действий.</p>
+    </div>
+  </section>
+
+  <section id="channel" data-screen-label="Канал" style="padding:var(--pad) 24px;scroll-margin-top:76px;">
+    <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px);align-items:center;">
+      <div style="flex:1 1 400px;min-width:280px;">
+        <span style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);">06 — Telegram-канал</span>
+        <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(28px,4vw,46px);line-height:1.07;letter-spacing:-.01em;color:var(--ink);margin:16px 0 0;">Мой канал «Алло, это бухгалтерия?»</h2>
+        <p style="font-size:clamp(15px,1.5vw,18px);line-height:1.62;color:var(--ink2);margin:18px 0 0;">Здесь я делюсь разъяснениями простыми словами, разбираю налоговые новости, показываю кейсы из практики и просто рассказываю о жизни бухгалтера. Открыто и доступно для всех.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;">
+          <span style="font-family:var(--mono);font-size:12px;color:var(--ink2);background:var(--card);border:1px solid var(--line);padding:8px 13px;border-radius:999px;">Налоговые новости и разборы</span>
+          <span style="font-family:var(--mono);font-size:12px;color:var(--ink2);background:var(--card);border:1px solid var(--line);padding:8px 13px;border-radius:999px;">Чек-листы, гайды, календарь отчётности</span>
+          <span style="font-family:var(--mono);font-size:12px;color:var(--ink2);background:var(--card);border:1px solid var(--line);padding:8px 13px;border-radius:999px;">Вопрос–ответ по реальным ситуациям</span>
+          <span style="flex-basis:100%;height:0;margin:0;padding:0;border:0;background:none;" aria-hidden="true"></span>
+          <span style="font-family:var(--mono);font-size:12px;color:var(--ink2);background:var(--card);border:1px solid var(--line);padding:8px 13px;border-radius:999px;">Мотивация</span>
+          <span style="font-family:var(--mono);font-size:12px;color:var(--ink2);background:var(--card);border:1px solid var(--line);padding:8px 13px;border-radius:999px;">Жизнь и события: нетворкинг, встречи, поездки</span>
+        </div>
+        <a href="https://t.me/allobuhgalter" target="_blank" rel="noopener" style="display:inline-flex;margin-top:28px;text-decoration:none;background:var(--accent);color:#FBF6EF;font-weight:600;font-size:16px;padding:15px 27px;border-radius:999px;" style-hover="filter:brightness(.93)">Подписаться на канал</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="wish" data-wish-section data-screen-label="Пожелание" style="padding:var(--pad) 24px;scroll-margin-top:76px;background:var(--paper2);">
+    <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px);align-items:center;">
+      <div style="flex:1 1 340px;min-width:270px;">
+        <span style="display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--card);border:1px solid var(--line);padding:8px 15px;border-radius:999px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);"></span>На каждый день</span>
+        <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.8vw,44px);line-height:1.07;letter-spacing:-.01em;color:var(--ink);margin:18px 0 0;">Пожелание на сегодня</h2>
+        <p style="font-size:clamp(15px,1.5vw,18px);line-height:1.6;color:var(--ink2);margin:16px 0 0;max-width:440px;">Нажмите кнопку — и получите пожелание. Как всегда, тепло и от души.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;">
+          <button data-wishget onClick="{{ getWish }}" style="cursor:pointer;border:0;background:var(--accent);color:#FBF6EF;font-family:var(--sans);font-weight:600;font-size:16px;padding:15px 27px;border-radius:999px;" style-hover="filter:brightness(.93)">Получить пожелание</button>
+          <button data-wishmore onClick="{{ anotherWish }}" style="display:none;cursor:pointer;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font-family:var(--sans);font-weight:600;font-size:16px;padding:14px 26px;border-radius:999px;" style-hover="background:var(--ink);color:var(--paper)">Ещё одно</button>
+        </div>
+        <button data-wishfill onClick="{{ toggleFill }}" style="margin-top:16px;display:inline-block;cursor:pointer;border:0;background:transparent;color:var(--ink3);font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-decoration:underline;text-underline-offset:3px;padding:4px 0;">Загрузить свои картинки</button>
+      </div>
+      <div style="flex:1 1 300px;min-width:240px;max-width:340px;margin:0 auto;">
+        <div style="position:relative;width:100%;">
+          <div data-wishstage ref="{{ stageRef }}" style="position:relative;aspect-ratio:2/3;width:100%;">
+            <div data-wrap style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="wish-1" shape="rounded" radius="18" fit="contain" placeholder="Пожелание 1" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div data-wrap style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="wish-2" shape="rounded" radius="18" fit="contain" placeholder="Пожелание 2" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div data-wrap style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="wish-3" shape="rounded" radius="18" fit="contain" placeholder="Пожелание 3" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div data-wrap style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="wish-4" shape="rounded" radius="18" fit="contain" placeholder="Пожелание 4" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div data-wrap style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="wish-5" shape="rounded" radius="18" fit="contain" placeholder="Пожелание 5" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div data-wrap style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="wish-6" shape="rounded" radius="18" fit="contain" placeholder="Пожелание 6" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div data-wrap style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="wish-7" shape="rounded" radius="18" fit="contain" placeholder="Пожелание 7" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div data-wrap style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="wish-8" shape="rounded" radius="18" fit="contain" placeholder="Пожелание 8" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div data-wrap style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="wish-9" shape="rounded" radius="18" fit="contain" placeholder="Пожелание 9" style="display:block;width:100%;height:100%;"></image-slot></div>
+            <div data-wrap style="position:absolute;inset:0;opacity:0;transition:opacity .4s ease;"><image-slot id="wish-10" shape="rounded" radius="18" fit="contain" placeholder="Пожелание 10" style="display:block;width:100%;height:100%;"></image-slot></div>
+          </div>
+          <div data-cover style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;background:var(--card);border:1px dashed var(--line);border-radius:18px;padding:24px;">
+            <span style="font-family:var(--serif);font-size:44px;color:var(--accent);line-height:1;">?</span>
+            <span style="font-size:14px;color:var(--ink3);font-family:var(--mono);letter-spacing:.03em;">Нажмите, чтобы открыть</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" data-screen-label="FAQ" style="padding:var(--pad) 24px;scroll-margin-top:76px;">
+    <div style="max-width:820px;margin:0 auto;">
+      <div style="text-align:center;">
+        <span style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);">07 — Вопросы</span>
+        <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.4vw,50px);line-height:1.06;letter-spacing:-.01em;color:var(--ink);margin:16px 0 0;">Частые вопросы</h2>
+      </div>
+      <div style="margin-top:clamp(32px,4vw,48px);">
+        <details data-acc style="border-top:1px solid var(--line);">
+          <summary style="display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 0;font-size:17px;font-weight:600;color:var(--ink);">Вы работаете удалённо?<span data-chev style="flex:0 0 auto;font-family:var(--mono);color:var(--accent);font-size:20px;transition:transform .25s;">+</span></summary>
+          <p style="font-size:15px;line-height:1.62;color:var(--ink2);margin:0 0 20px;">Да, веду клиентов по всей России онлайн. Всё общение и документы — дистанционно.</p>
+        </details>
+        <details data-acc style="border-top:1px solid var(--line);">
+          <summary style="display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 0;font-size:17px;font-weight:600;color:var(--ink);">С какими системами налогообложения вы работаете?<span data-chev style="flex:0 0 auto;font-family:var(--mono);color:var(--accent);font-size:20px;transition:transform .25s;">+</span></summary>
+          <p style="font-size:15px;line-height:1.62;color:var(--ink2);margin:0 0 20px;">УСН, ОСНО, ПСН, АУСН, а также самозанятые (НПД). Помогу выбрать оптимальный режим под ваш бизнес.</p>
+        </details>
+        <details data-acc style="border-top:1px solid var(--line);">
+          <summary style="display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 0;font-size:17px;font-weight:600;color:var(--ink);">Я селлер на маркетплейсе — возьмётесь?<span data-chev style="flex:0 0 auto;font-family:var(--mono);color:var(--accent);font-size:20px;transition:transform .25s;">+</span></summary>
+          <p style="font-size:15px;line-height:1.62;color:var(--ink2);margin:0 0 20px;">Да. Веду учёт по отчётам, знаю специфику выкупов, компенсаций, УПД и НДС для маркетплейсов.</p>
+        </details>
+        <details data-acc style="border-top:1px solid var(--line);">
+          <summary style="display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 0;font-size:17px;font-weight:600;color:var(--ink);">В каких программах вы ведёте учёт?<span data-chev style="flex:0 0 auto;font-family:var(--mono);color:var(--accent);font-size:20px;transition:transform .25s;">+</span></summary>
+          <p style="font-size:15px;line-height:1.62;color:var(--ink2);margin:0 0 20px;">Основная для ИП на УСН — «Эльба», также работаю в 1С.</p>
+        </details>
+        <details data-acc style="border-top:1px solid var(--line);">
+          <summary style="display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 0;font-size:17px;font-weight:600;color:var(--ink);">Что если у вас нет места в графике?<span data-chev style="flex:0 0 auto;font-family:var(--mono);color:var(--accent);font-size:20px;transition:transform .25s;">+</span></summary>
+          <p style="font-size:15px;line-height:1.62;color:var(--ink2);margin:0 0 20px;">В пик отчётности место ограничено. Если не смогу взять сама, порекомендую проверенного бухгалтера-профессионала.</p>
+        </details>
+        <details data-acc style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+          <summary style="display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 0;font-size:17px;font-weight:600;color:var(--ink);">Как записаться?<span data-chev style="flex:0 0 auto;font-family:var(--mono);color:var(--accent);font-size:20px;transition:transform .25s;">+</span></summary>
+          <p style="font-size:15px;line-height:1.62;color:var(--ink2);margin:0 0 20px;">Напишите мне в Telegram <strong style="color:var(--ink);">@anna_klos</strong> и коротко опишите ситуацию.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" data-screen-label="Контакты" style="padding:var(--pad) 24px;scroll-margin-top:76px;background:var(--paper2);">
+    <div style="max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px);align-items:flex-start;">
+      <div style="flex:1 1 380px;min-width:280px;">
+        <span style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);">08 — Контакты</span>
+        <h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.4vw,50px);line-height:1.06;letter-spacing:-.01em;color:var(--ink);margin:16px 0 0;">Давайте познакомимся</h2>
+        <p style="font-size:clamp(15px,1.5vw,18px);line-height:1.62;color:var(--ink2);margin:20px 0 0;max-width:480px;">Меня зовут Анна Клос, я бухгалтер для малого бизнеса. Помогаю предпринимателям чувствовать себя комфортно и безопасно в мире налогов. Расскажите, чем вы занимаетесь и с каким вопросом пришли — отвечу лично.</p>
+        <a href="https://t.me/anna_klos" target="_blank" rel="noopener" style="display:inline-flex;margin-top:26px;text-decoration:none;background:var(--accent);color:#FBF6EF;font-weight:600;font-size:16px;padding:15px 27px;border-radius:999px;" style-hover="filter:brightness(.93)">Написать в Telegram</a>
+        <div style="display:flex;gap:12px;align-items:flex-start;margin-top:24px;max-width:440px;">
+          <span style="flex:0 0 auto;margin-top:4px;width:7px;height:7px;border-radius:50%;background:var(--accent2);"></span>
+          <p style="font-size:14px;line-height:1.55;color:var(--ink3);margin:0;">Отвечаю лично. В отчётный период — чуть дольше, но отвечаю всегда.</p>
+        </div>
+      </div>
+      <div style="flex:1 1 380px;min-width:280px;">
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,34px);position:relative;">
+          <form ref="{{ formRef }}" onSubmit="{{ submitForm }}" style="display:flex;flex-direction:column;gap:16px;">
+            <p style="font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin:0;">Форма-заявка · если вы не в Telegram</p>
+            <label style="display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink2);">Имя
+              <input name="name" required="required" placeholder="Как к вам обращаться" style="font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:12px 14px;outline:none;" style-focus="border-color:var(--accent)">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink2);">Телефон, Telegram или e-mail
+              <input name="contact" required="required" placeholder="Как с вами связаться" style="font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:12px 14px;outline:none;" style-focus="border-color:var(--accent)">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink2);">Ваш статус
+              <select name="status" style="font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:12px 14px;outline:none;" style-focus="border-color:var(--accent)">
+                <option>ИП</option>
+                <option>ООО</option>
+                <option>Самозанятый</option>
+                <option>Только планирую</option>
+                <option>Бухгалтер</option>
+              </select>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink2);">Кратко о задаче
+              <textarea name="task" rows="3" placeholder="Что нужно решить" style="font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:12px 14px;outline:none;resize:vertical;" style-focus="border-color:var(--accent)"></textarea>
+            </label>
+            <label style="display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.5;color:var(--ink3);cursor:pointer;">
+              <input type="checkbox" required="required" style="margin-top:2px;accent-color:var(--accent);width:16px;height:16px;flex:0 0 auto;">
+              <span>Согласен на обработку персональных данных согласно <a href="#" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-soft);">политике конфиденциальности</a>.</span>
+            </label>
+            <button type="submit" style="cursor:pointer;border:0;background:var(--accent);color:#FBF6EF;font-family:var(--sans);font-weight:600;font-size:16px;padding:15px 24px;border-radius:12px;margin-top:4px;" style-hover="filter:brightness(.93)">Отправить</button>
+          </form>
+          <div ref="{{ formDoneRef }}" style="display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:24px 8px;min-height:320px;">
+            <span style="font-family:var(--serif);font-size:40px;color:var(--accent2);line-height:1;">✓</span>
+            <h3 style="font-family:var(--serif);font-weight:600;font-size:24px;color:var(--ink);margin:0;">Спасибо!</h3>
+            <p style="font-size:15px;line-height:1.55;color:var(--ink2);margin:0;max-width:280px;">Продолжим в Telegram — так быстрее и удобнее. Открываю чат с @anna_klos.</p>
+            <a href="https://t.me/anna_klos" target="_blank" rel="noopener" style="text-decoration:none;background:var(--accent);color:#FBF6EF;font-weight:600;font-size:15px;padding:13px 24px;border-radius:999px;margin-top:6px;" style-hover="filter:brightness(.93)">Открыть Telegram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--espresso);color:#C9BBA9;padding:clamp(48px,6vw,72px) 24px 40px;">
+    <div style="max-width:1120px;margin:0 auto;">
+      <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;">
+        <div style="flex:1 1 300px;min-width:250px;">
+          <div style="font-family:var(--serif);font-weight:600;font-size:24px;color:#F4EDE1;">Анна Клос</div>
+          <div style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8F8272;margin-top:6px;">бухгалтер для малого бизнеса</div>
+          <p style="font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.4;color:#C9BBA9;margin:20px 0 0;max-width:340px;">«Бухгалтерия может быть понятной и спокойной»</p>
+        </div>
+        <div style="flex:0 1 auto;display:flex;flex-wrap:wrap;gap:48px;">
+          <div>
+            <div style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8F8272;margin-bottom:14px;">Разделы</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;">
+              <a href="#klientam" style="text-decoration:none;color:#C9BBA9;" style-hover="color:var(--accent)">Кому помогаю</a>
+              <a href="#about" style="text-decoration:none;color:#C9BBA9;" style-hover="color:var(--accent)">Обо мне</a>
+              <a href="#services" style="text-decoration:none;color:#C9BBA9;" style-hover="color:var(--accent)">Услуги</a>
+              <a href="#channel" style="text-decoration:none;color:#C9BBA9;" style-hover="color:var(--accent)">Канал</a>
+              <a href="#contacts" style="text-decoration:none;color:#C9BBA9;" style-hover="color:var(--accent)">Контакты</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8F8272;margin-bottom:14px;">Связь</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px;">
+              <a href="https://t.me/anna_klos" target="_blank" rel="noopener" style="text-decoration:none;color:#C9BBA9;" style-hover="color:var(--accent)">Написать — @anna_klos</a>
+              <a href="https://t.me/allobuhgalter" target="_blank" rel="noopener" style="text-decoration:none;color:#C9BBA9;" style-hover="color:var(--accent)">Канал — @allobuhgalter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11.5px;line-height:1.5;color:#6E6353;margin:20px 0 0;max-width:720px;">Информация на сайте носит справочный характер и не является публичной офертой.</p>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B4693B&quot;,&quot;options&quot;:[&quot;#B4693B&quot;,&quot;#6C7A57&quot;,&quot;#3F6C86&quot;,&quot;#A2503A&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Стиль&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Просторно&quot;,&quot;Компактно&quot;],&quot;default&quot;:&quot;Просторно&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Стиль&quot;},&quot;showWish&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Блоки&quot;}}">
+class Component extends DCLogic {
+  state = { wishStarted: false, wishFill: false, wishActive: -1, wishLast: -1 };
+
+  constructor(props) {
+    super(props);
+    this.rootRef = React.createRef();
+    this.stageRef = React.createRef();
+    this.formRef = React.createRef();
+    this.formDoneRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.applyProps();
+    this.applyWishView();
+    const root = this.rootRef.current;
+    if (root) {
+      root.querySelectorAll('details[data-acc]').forEach((d) => {
+        d.addEventListener('toggle', () => {
+          const ch = d.querySelector('[data-chev]');
+          if (ch) {
+            ch.style.transform = d.open ? 'rotate(45deg)' : 'rotate(0deg)';
+            ch.textContent = '+';
+          }
+        });
+      });
+    }
+    const form = this.formRef.current;
+    if (form) {
+      ['name', 'contact'].forEach((n) => { const el = form.querySelector('[name="' + n + '"]'); if (el) el.required = true; });
+      const cb = form.querySelector('input[type="checkbox"]'); if (cb) cb.required = true;
+    }
+    this.setupReveal();
+  }
+
+  setupReveal() {
+    if (this._revealDone) return;
+    const root = this.rootRef.current;
+    if (!root) return;
+    this._revealDone = true;
+    let reduce = false;
+    try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (_) {}
+    if (reduce || !('IntersectionObserver' in window)) return;
+
+    const ease = 'cubic-bezier(.22,.7,.24,1)';
+    const targets = [];
+    const add = (el, delay) => {
+      if (!el || el.dataset.reveal) return;
+      el.dataset.reveal = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity .7s ' + ease + ', transform .7s ' + ease;
+      el.style.transitionDelay = (delay || 0) + 'ms';
+      el.style.willChange = 'opacity, transform';
+      targets.push(el);
+    };
+
+    const blocks = root.querySelectorAll('section:not(#hero), footer');
+    blocks.forEach((sec) => {
+      const inner = sec.firstElementChild;
+      if (!inner) return;
+      Array.from(inner.children).forEach((child) => {
+        let disp = '';
+        try { disp = getComputedStyle(child).display; } catch (_) {}
+        if (disp === 'grid' && child.children.length > 1) {
+          Array.from(child.children).forEach((c, i) => add(c, Math.min(i * 65, 260)));
+        } else {
+          add(child, 0);
+        }
+      });
+    });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+
+    targets.forEach((el) => io.observe(el));
+    this._revealIO = io;
+  }
+
+  componentDidUpdate() {
+    this.applyProps();
+    this.applyWishView();
+  }
+
+  applyProps() {
+    const r = this.rootRef.current;
+    if (!r) return;
+    const a = this.props.accentColor;
+    if (a) r.style.setProperty('--accent', a);
+    const dense = this.props.density === 'Компактно';
+    r.style.setProperty('--pad', dense ? 'clamp(44px,6vw,84px)' : 'clamp(64px,9vw,128px)');
+    const wish = r.querySelector('[data-wish-section]');
+    if (wish) wish.style.display = this.props.showWish === false ? 'none' : '';
+  }
+
+  pickWish() {
+    const n = 10;
+    let i;
+    do { i = Math.floor(Math.random() * n); } while (i === this.state.wishLast && n > 1);
+    return i;
+  }
+
+  goToWish = () => {
+    const root = this.rootRef.current;
+    const sec = root && root.querySelector('#wish');
+    if (sec) {
+      const y = sec.getBoundingClientRect().top + window.scrollY - 12;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    const i = this.pickWish();
+    this.setState({ wishStarted: true, wishFill: false, wishActive: i, wishLast: i });
+  };
+
+  getWish = () => {
+    const i = this.pickWish();
+    this.setState({ wishStarted: true, wishFill: false, wishActive: i, wishLast: i });
+  };
+
+  anotherWish = () => {
+    const i = this.pickWish();
+    this.setState({ wishStarted: true, wishFill: false, wishActive: i, wishLast: i });
+  };
+
+  toggleFill = () => {
+    this.setState((s) => ({ wishFill: !s.wishFill }));
+  };
+
+  applyWishView() {
+    const stage = this.stageRef.current;
+    if (!stage) return;
+    const wraps = Array.from(stage.querySelectorAll('[data-wrap]'));
+    const parent = stage.parentElement;
+    const cover = parent ? parent.querySelector('[data-cover]') : null;
+    const root = this.rootRef.current;
+    const { wishFill, wishActive, wishStarted } = this.state;
+
+    if (wishFill) {
+      stage.style.display = 'grid';
+      stage.style.gridTemplateColumns = 'repeat(auto-fill,minmax(120px,1fr))';
+      stage.style.gap = '10px';
+      stage.style.position = 'relative';
+      stage.style.aspectRatio = 'auto';
+      wraps.forEach((w) => {
+        w.style.position = 'relative';
+        w.style.inset = 'auto';
+        w.style.opacity = '1';
+        w.style.pointerEvents = 'auto';
+        w.style.animation = 'none';
+        w.style.aspectRatio = '2/3';
+      });
+      if (cover) cover.style.display = 'none';
+    } else {
+      stage.style.display = 'block';
+      stage.style.position = 'relative';
+      stage.style.gridTemplateColumns = '';
+      stage.style.gap = '';
+      stage.style.aspectRatio = '2/3';
+      wraps.forEach((w, idx) => {
+        w.style.position = 'absolute';
+        w.style.inset = '0';
+        w.style.aspectRatio = 'auto';
+        const on = wishStarted && idx === wishActive;
+        w.style.opacity = on ? '1' : '0';
+        w.style.pointerEvents = on ? 'auto' : 'none';
+        w.style.animation = on ? 'wishIn .5s cubic-bezier(.2,.7,.2,1)' : 'none';
+      });
+      if (cover) cover.style.display = wishStarted ? 'none' : 'flex';
+    }
+
+    if (root) {
+      const bGet = root.querySelector('[data-wishget]');
+      const bMore = root.querySelector('[data-wishmore]');
+      const bFill = root.querySelector('[data-wishfill]');
+      if (bGet) bGet.style.display = wishStarted && !wishFill ? 'none' : 'inline-flex';
+      if (bMore) bMore.style.display = wishStarted && !wishFill ? 'inline-flex' : 'none';
+      if (bFill) bFill.textContent = wishFill ? 'Готово — вернуться к пожеланию' : 'Загрузить свои картинки';
+    }
+  }
+
+  submitForm = (e) => {
+    e.preventDefault();
+    const f = this.formRef.current;
+    if (!f) return;
+    const name = f.querySelector('[name="name"]');
+    const contact = f.querySelector('[name="contact"]');
+    const consent = f.querySelector('input[type="checkbox"]');
+    const missing = (name && !name.value.trim()) || (contact && !contact.value.trim()) || (consent && !consent.checked);
+    if (missing || !f.checkValidity()) { f.reportValidity(); return; }
+    f.style.display = 'none';
+    const done = this.formDoneRef.current;
+    if (done) done.style.display = 'flex';
+    try { window.open('https://t.me/anna_klos', '_blank', 'noopener'); } catch (_) {}
+  };
+
+  renderVals() {
+    return {
+      rootRef: this.rootRef,
+      stageRef: this.stageRef,
+      formRef: this.formRef,
+      formDoneRef: this.formDoneRef,
+      getWish: this.getWish,
+      goToWish: this.goToWish,
+      anotherWish: this.anotherWish,
+      toggleFill: this.toggleFill,
+      submitForm: this.submitForm,
+    };
+  }
+}
+</script>
+</body>
+</html>
