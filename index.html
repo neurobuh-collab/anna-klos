@@ -427,6 +427,8 @@ summary::-webkit-details-marker{display:none}
         <div style="background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,34px);position:relative;">
           <form ref="{{ formRef }}" onSubmit="{{ submitForm }}" style="display:flex;flex-direction:column;gap:16px;">
             <p style="font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin:0;">Форма-заявка · если вы не в Telegram</p>
+            <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;">
+
             <label style="display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--ink2);">Имя
               <input name="name" required="required" placeholder="Как к вам обращаться" style="font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:12px 14px;outline:none;" style-focus="border-color:var(--accent)">
             </label>
@@ -691,6 +693,28 @@ class Component extends DCLogic {
     const consent = f.querySelector('input[type="checkbox"]');
     const missing = (name && !name.value.trim()) || (contact && !contact.value.trim()) || (consent && !consent.checked);
     if (missing || !f.checkValidity()) { f.reportValidity(); return; }
+    // Relay that forwards the заявка to the Telegram bot (Google Apps Script;
+    // holds the bot token server-side). Replace with your /exec URL.
+    const RELAY_URL = 'https://script.google.com/macros/s/AKfycbwMFqAHDW62q4fujuxwbcFJQuurV0xQyUtazCru_WYPPhe9zJz2_vEexfojFoABwRHc/exec';
+    const val = (sel) => { const el = f.querySelector(sel); return el && el.value ? el.value.trim() : ''; };
+    const hp = f.querySelector('[name="website"]'); // honeypot: filled only by bots
+    if (!(hp && hp.value) && RELAY_URL.indexOf('__RELAY') === -1) {
+      try {
+        fetch(RELAY_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            name: val('[name="name"]'),
+            contact: val('[name="contact"]'),
+            status: val('[name="status"]'),
+            task: val('[name="task"]'),
+            page: location.href,
+            ts: new Date().toISOString(),
+          }),
+        });
+      } catch (_) {}
+    }
     f.style.display = 'none';
     const done = this.formDoneRef.current;
     if (done) done.style.display = 'flex';
