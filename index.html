@@ -456,8 +456,7 @@ summary::-webkit-details-marker{display:none}
           <div ref="{{ formDoneRef }}" style="display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:24px 8px;min-height:320px;">
             <span style="font-family:var(--serif);font-size:40px;color:var(--accent2);line-height:1;">✓</span>
             <h3 style="font-family:var(--serif);font-weight:600;font-size:24px;color:var(--ink);margin:0;">Спасибо!</h3>
-            <p style="font-size:15px;line-height:1.55;color:var(--ink2);margin:0;max-width:280px;">Продолжим в Telegram — так быстрее и удобнее. Открываю чат с @anna_klos.</p>
-            <a href="https://t.me/anna_klos" target="_blank" rel="noopener" style="text-decoration:none;background:var(--accent);color:#FBF6EF;font-weight:600;font-size:15px;padding:13px 24px;border-radius:999px;margin-top:6px;" style-hover="filter:brightness(.93)">Открыть Telegram</a>
+            <p style="font-size:15px;line-height:1.55;color:var(--ink2);margin:0;max-width:280px;">Заявка отправлена. Я свяжусь с вами в ближайшее время.</p>
           </div>
         </div>
       </div>
@@ -718,7 +717,6 @@ class Component extends DCLogic {
     f.style.display = 'none';
     const done = this.formDoneRef.current;
     if (done) done.style.display = 'flex';
-    try { window.open('https://t.me/anna_klos', '_blank', 'noopener'); } catch (_) {}
   };
 
   renderVals() {
